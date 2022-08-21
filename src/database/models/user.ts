@@ -1,6 +1,5 @@
 'use strict';
 import { Model, InferAttributes, InferCreationAttributes, UUIDV4 } from 'sequelize';
-
 module.exports = (sequelize: any, DataTypes: any) => {
   class User extends Model<InferAttributes<User>, InferCreationAttributes<User>> {
     /**
@@ -18,6 +17,10 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
     static associate(models: any) {
       // define association here
+      User.hasMany(models.UserAddress, {
+        sourceKey: 'id',
+        foreignKey: 'user_id',
+      })
     }
   };
   User.init({
