@@ -20,4 +20,20 @@ export default class UserController {
       next(error);
     }
   }
+
+  public login = async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const { email, password } = req.body;
+      const user: User = await this.UserService.login(email, password);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          message: 'user login successful',
+          data: user
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
