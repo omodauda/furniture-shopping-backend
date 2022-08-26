@@ -19,4 +19,14 @@ export default class UserService {
       },
     })
   }
+
+  public async login(email: string, password: string): Promise<User> {
+    const existingUser = await this.users.findUnique({ where: { email } });
+    if (!existingUser) throw new HttpException(409, 'invalid email/password');
+
+    const isValidPassword: boolean = await bcrypt.compare(password, existingUser.password);
+    if (!isValidPassword) throw new HttpException(401, 'invalid email/password');
+
+    return existingUser;
+  }
 }
