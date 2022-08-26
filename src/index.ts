@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
-import app from './app';
+import App from './app';
+
+import UserRoute from './routes/user.route';
 
 dotenv.config();
 
-const { PORT } = process.env;
+const app = new App([new UserRoute()]);
 
-app.listen(PORT, () => {
-  console.log(`App is listening on port ${PORT}`)
-})
+app.listen();
