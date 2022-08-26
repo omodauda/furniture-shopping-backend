@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import UserController from '../controllers/user.controller';
 import Route from '../interfaces/routes.interface';
+import validationMiddleware from '../middlewares/validation.middleware';
+import { signUpValidationSchema } from '../validations/user.validation';
 
 export default class UserRoute implements Route {
   public path = '/user';
@@ -14,6 +16,6 @@ export default class UserRoute implements Route {
   private initializeRoutes() {
     this.router
       .route(`${this.path}/signup`)
-      .post(this.UserController.signUp);
+      .post(validationMiddleware(signUpValidationSchema), this.UserController.signUp);
   }
 }
