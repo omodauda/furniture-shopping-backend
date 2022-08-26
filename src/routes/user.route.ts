@@ -17,5 +17,9 @@ export default class UserRoute implements Route {
     this.router
       .route(`${this.path}/signup`)
       .post(validationMiddleware(signUpValidationSchema), this.UserController.signUp);
+
+    this.router
+      .route(`${this.path}/login`)
+      .post(this.UserController.login);
   }
 }
