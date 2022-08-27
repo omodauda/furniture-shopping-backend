@@ -1,6 +1,8 @@
 import { User } from '@prisma/client';
 import { Request, Response, NextFunction } from 'express';
 import UserService from '../services/user.service';
+import { signToken } from '../utils/token';
+import { TokenData } from '../interfaces/auth.interface';
 
 export default class UserController {
 
@@ -25,11 +27,13 @@ export default class UserController {
     try {
       const { email, password } = req.body;
       const user: User = await this.UserService.login(email, password);
+      const { token } = signToken(user);
       return res
         .status(200)
         .json({
           status: 'success',
           message: 'user login successful',
+          token,
           data: user
         })
     } catch (error) {
