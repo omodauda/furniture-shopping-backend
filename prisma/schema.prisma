@@ -40,3 +40,14 @@ model UserAddress {
 
   @@map("user_address")
 }
+
+model Product {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  price       Int
+  photo       String?
+  quantity    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
