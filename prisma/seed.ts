@@ -2,6 +2,15 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.user.create({
+    data: {
+      email: 'admin@furnitureshopping.com',
+      password: 'admin',
+      fullName: 'admin admin',
+      isAdmin: true,
+      isVerified: true
+    }
+  })
   await prisma.productCategory.createMany({
     data: [
       {
