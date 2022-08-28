@@ -2,7 +2,6 @@ import { User } from '@prisma/client';
 import { Request, Response, NextFunction } from 'express';
 import UserService from '../services/user.service';
 import { signToken } from '../utils/token';
-import { TokenData } from '../interfaces/auth.interface';
 
 export default class UserController {
 
