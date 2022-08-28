@@ -52,6 +52,8 @@ model Product {
   updatedAt         DateTime        @updatedAt
   productCategory   ProductCategory @relation(fields: [productCategoryId], references: [id], onDelete: Cascade)
   productCategoryId String
+
+  @@map("products")
 }
 
 model ProductCategory {
