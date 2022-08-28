@@ -2,6 +2,7 @@ import { User } from '@prisma/client';
 import { Request, Response, NextFunction } from 'express';
 import UserService from '../services/user.service';
 import { signToken } from '../utils/token';
+import { AuthRequest } from '../interfaces/auth.interface';
 
 export default class UserController {
 
@@ -33,6 +34,21 @@ export default class UserController {
           status: 'success',
           message: 'user login successful',
           token,
+          data: user
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  public profile = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
+    const { id: userId } = req.user;
+    try {
+      const user = await this.UserService.getProfile(userId);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
           data: user
         })
     } catch (error) {
