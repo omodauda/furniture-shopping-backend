@@ -3,7 +3,7 @@ import UserController from '../controllers/user.controller';
 import AddressController from '../controllers/address.controller';
 import Route from '../interfaces/routes.interface';
 import validationMiddleware from '../middlewares/validation.middleware';
-import { signUpValidationSchema } from '../validations/user.validation';
+import { signUpValidation, loginValidation } from '../validations/user.validation';
 import authMiddleware from '../middlewares/auth.middleware';
 
 export default class UserRoute implements Route {
@@ -19,11 +19,11 @@ export default class UserRoute implements Route {
   private initializeRoutes() {
     this.router
       .route(`${this.path}/signup`)
-      .post(validationMiddleware(signUpValidationSchema), this.UserController.signUp);
+      .post(validationMiddleware(signUpValidation), this.UserController.signUp);
 
     this.router
       .route(`${this.path}/login`)
-      .post(this.UserController.login);
+      .post(validationMiddleware(loginValidation), this.UserController.login);
 
     this.router
       .route(`${this.path}/address`)
