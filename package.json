@@ -10,6 +10,9 @@
     "build": "tsc",
     "postinstall": "npm run build"
   },
+  "prisma": {
+    "seed": "tsc prisma/seed.ts"
+  },
   "keywords": [],
   "author": "Lawal Dauda",
   "license": "ISC",

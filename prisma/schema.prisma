@@ -42,12 +42,22 @@ model UserAddress {
 }
 
 model Product {
-  id          String   @id @default(uuid())
-  name        String
-  description String
-  price       Int
-  photo       String?
-  quantity    Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id                String          @id @default(uuid())
+  name              String
+  description       String
+  price             Int
+  photo             String?
+  quantity          Int
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  productCategory   ProductCategory @relation(fields: [productCategoryId], references: [id], onDelete: Cascade)
+  productCategoryId String
+}
+
+model ProductCategory {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  products Product[]
+
+  @@map("product_categories")
 }
