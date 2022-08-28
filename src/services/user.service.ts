@@ -1,6 +1,7 @@
 import { User, PrismaClient } from '@prisma/client';
 import HttpException from '../utils/handlers/error.handler';
 import bcrypt from 'bcrypt';
+import { UserProfile } from '../interfaces/user.interface';
 
 
 export default class UserService {
@@ -28,5 +29,29 @@ export default class UserService {
     if (!isValidPassword) throw new HttpException(401, 'invalid email/password');
 
     return existingUser;
+  }
+
+  public async getProfile(userId: string): Promise<UserProfile> {
+    const profile = await this.users.findUnique({
+      where: {
+        id: userId,
+      },
+      select: {
+        fullName: true,
+        email: true,
+        photo: true,
+        addresses: {
+          select: {
+            id: true,
+            fullName: true,
+            address: true,
+            postalCode: true,
+            country: true,
+            city: true
+          }
+        }
+      }
+    });
+    return profile!;
   }
 }
