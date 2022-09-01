@@ -5,7 +5,7 @@ import Route from '../interfaces/routes.interface';
 import validationMiddleware from '../middlewares/validation.middleware';
 import { signUpValidation, loginValidation } from '../validations/user.validation';
 import { createAddressValidation } from '../validations/address.validation';
-import authMiddleware from '../middlewares/auth.middleware';
+import { authMiddleware } from '../middlewares/auth.middleware';
 
 export default class UserRoute implements Route {
   public path = '/user';
