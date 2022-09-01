@@ -28,4 +28,13 @@ async function authMiddleware(req: AuthRequest, res: Response, next: NextFunctio
 
 }
 
-export default authMiddleware;
+async function adminOnlyMiddleware(req: AuthRequest, res: Response, next: NextFunction) {
+  const { isAdmin } = req.user;
+  if (!isAdmin) {
+    return next(new HttpException(401, 'You do not have permission to perform this action'))
+  } else {
+    next()
+  }
+}
+
+export { authMiddleware, adminOnlyMiddleware };
