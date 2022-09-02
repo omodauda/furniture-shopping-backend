@@ -46,7 +46,7 @@ model Product {
   name              String
   description       String
   price             Decimal         @db.Decimal(10, 2)
-  photo             String
+  images            ProductImage[]
   quantity          Int
   createdAt         DateTime        @default(now())
   updatedAt         DateTime        @updatedAt
@@ -62,4 +62,13 @@ model ProductCategory {
   products Product[]
 
   @@map("product_categories")
+}
+
+model ProductImage {
+  id        String  @id @default(uuid())
+  image     String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  productId String
+
+  @@map("product_image")
 }
