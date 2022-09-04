@@ -33,11 +33,10 @@ const addProductValidation = Joi.object().keys({
     }),
   price: Joi.number()
     .required()
-    .integer()
     .positive()
     .messages({
+      'number.base': "price must be a number",
       'any.required': 'price is required',
-      'number.integer': 'price should be an integer',
       'number.positive': 'price should be a positive number',
     }),
   quantity: Joi.number()
@@ -45,6 +44,7 @@ const addProductValidation = Joi.object().keys({
     .integer()
     .positive()
     .messages({
+      'number.base': "quantity must be a number",
       'any.required': 'quantity is required',
       'number.integer': 'quantity should be an integer',
       'number.positive': 'quantity should be a positive number',
