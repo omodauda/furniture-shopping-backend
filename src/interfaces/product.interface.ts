@@ -6,3 +6,8 @@ export interface ProductData {
   quantity: number;
   productCategoryId: string;
 }
+
+export interface ProductImage {
+  publicId: string;
+  url: string;
+}
