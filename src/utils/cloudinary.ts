@@ -1,4 +1,4 @@
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary, UploadApiResponse } from 'cloudinary';
 
 cloudinary.config({
   cloud_name: process.env.cloud_name,
@@ -9,7 +9,7 @@ cloudinary.config({
 class Cloudinary {
   private cloud = cloudinary;
 
-  public uploadImage = async (image: { path: string }, folder: string): Promise<object> => {
+  public uploadImage = async (image: { path: string }, folder: any): Promise<UploadApiResponse> => {
     return await this.cloud.uploader.upload(image.path, {
       folder: `furniture-shopping/${folder}`
     })
