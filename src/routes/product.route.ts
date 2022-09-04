@@ -4,6 +4,7 @@ import Route from '../interfaces/routes.interface';
 import validationMiddleware from '../middlewares/validation.middleware';
 import { addProductValidation } from '../validations/product.validation';
 import { adminOnlyMiddleware, authMiddleware } from '../middlewares/auth.middleware';
+import multerImageUpload from '../utils/multer';
 
 export default class ProductRoute implements Route {
   public path = '/product';
@@ -21,6 +22,7 @@ export default class ProductRoute implements Route {
         // validationMiddleware(addProductValidation),
         authMiddleware,
         adminOnlyMiddleware,
+        multerImageUpload.array('image'),
         this.ProductController.addProduct
       );
   }
