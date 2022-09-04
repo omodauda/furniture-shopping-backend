@@ -34,13 +34,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png',
+              publicId: 'furniture-shopping/Chair/coffee-chair_wrkhmk'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png',
+              publicId: 'furniture-shopping/Chair/coffee-chair_wrkhmk'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103102/furniture-shopping/Chair/coffee-chair_wrkhmk.png',
+              publicId: 'furniture-shopping/Chair/coffee-chair_wrkhmk'
             }
           ]
         }
@@ -67,13 +70,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             }
           ]
         }
@@ -91,13 +97,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             }
           ]
         }
@@ -115,13 +124,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103141/furniture-shopping/Table/simple-desk_daz5pu.png',
+              publicId: 'furniture-shopping/Table/simple-desk_daz5pu'
             }
           ]
         }
@@ -139,13 +151,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png',
+              publicId: 'furniture-shopping/Table/coffee-table_ybvvxt'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png',
+              publicId: 'furniture-shopping/Table/coffee-table_ybvvxt'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103153/furniture-shopping/Table/coffee-table_ybvvxt.png',
+              publicId: 'furniture-shopping/Table/coffee-table_ybvvxt'
             }
           ]
         }
@@ -171,13 +186,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg',
+              publicId: 'furniture-shopping/Arm%20chair/armchair_r7su6k'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg',
+              publicId: 'furniture-shopping/Arm%20chair/armchair_r7su6k'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103471/furniture-shopping/Arm%20chair/armchair_r7su6k.jpg',
+              publicId: 'furniture-shopping/Arm%20chair/armchair_r7su6k'
             }
           ]
         }
@@ -203,13 +221,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp',
+              publicId: 'furniture-shopping/Bed/kingbed_hfpfsw'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp',
+              publicId: 'furniture-shopping/Bed/kingbed_hfpfsw'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103362/furniture-shopping/Bed/kingbed_hfpfsw.webp',
+              publicId: 'furniture-shopping/Bed/kingbed_hfpfsw'
             }
           ]
         }
@@ -235,13 +256,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             }
           ]
         }
@@ -259,13 +283,16 @@ async function main() {
         createMany: {
           data: [
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             },
             {
-              image: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png'
+              url: 'https://res.cloudinary.com/omodauda/image/upload/v1662103401/furniture-shopping/Lamp/simple-lamp_jn7ika.png',
+              publicId: 'furniture-shopping/Lamp/simple-lamp_jn7ika'
             }
           ]
         }

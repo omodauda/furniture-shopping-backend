@@ -66,7 +66,8 @@ model ProductCategory {
 
 model ProductImage {
   id        String  @id @default(uuid())
-  image     String
+  url       String
+  publicId  String
   product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
   productId String
 
