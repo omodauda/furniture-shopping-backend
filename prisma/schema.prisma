@@ -112,6 +112,7 @@ model CartItem {
   userId    String
   product   Product @relation(fields: [productId], references: [id])
   productId String
+  quantity  Int
 
   @@map("cart_items")
 }
