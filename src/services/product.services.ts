@@ -38,5 +38,35 @@ export default class ProductService {
 
   public getCategoryNameById = async (id: string): Promise<ProductCategory | null> => {
     return await this.category.findUnique({ where: { id } });
+  };
+
+  public getCategories = async (name: any) => {
+    return await this.category.findUnique({
+      where: {
+        name
+      },
+      include: {
+        products: {
+          include: {
+            images: true
+          }
+        }
+      }
+    });
+  }
+
+  public getProducts = async (): Promise<Product[]> => {
+    return await this.product.findMany();
+  }
+
+  public getProductById = async (productId: string): Promise<Product | null> => {
+    return await this.product.findUnique({
+      where: {
+        id: productId
+      },
+      include: {
+        images: true
+      }
+    })
   }
 }
