@@ -1,11 +1,12 @@
-import { User, PrismaClient } from '@prisma/client';
+import { User } from '@prisma/client';
 import HttpException from '../utils/handlers/error.handler';
 import bcrypt from 'bcrypt';
 import { UserProfile } from '../interfaces/user.interface';
+import prisma from '../lib/prisma';
 
 
 export default class UserService {
-  public users = new PrismaClient().user;
+  public users = prisma.user;
 
   public async createUser(email: string, password: string, fullName: string): Promise<User> {
     const existingEmail = await this.users.findUnique({ where: { email } });

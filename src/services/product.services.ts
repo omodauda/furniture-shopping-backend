@@ -1,12 +1,13 @@
 import { PrismaClient, Product, ProductCategory } from '@prisma/client';
 import { ProductImage } from '../interfaces/product.interface';
+import prisma from '../lib/prisma';
 
 
 export default class ProductService {
 
-  public product = new PrismaClient().product;
-  public category = new PrismaClient().productCategory;
-  public productImage = new PrismaClient().productImage;
+  public product = prisma.product;
+  public category = prisma.productCategory;
+  public productImage = prisma.productImage;
 
   public createProduct = async (
     name: string,

@@ -1,10 +1,10 @@
-import { PrismaClient } from '@prisma/client';
 import { Order } from '../interfaces/order.interface';
+import prisma from '../lib/prisma';
 
 export default class OrderService {
-  public order = new PrismaClient().order;
-  public orderItem = new PrismaClient().orderItem;
-  public prisma = new PrismaClient();
+  public order = prisma.order;
+  public orderItem = prisma.orderItem;
+  public prisma = prisma;
 
   public createOrder = async (userId: string, orderData: Order): Promise<void> => {
     const orderRecord = await this.order.create({

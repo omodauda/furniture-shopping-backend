@@ -1,8 +1,8 @@
-import { PrismaClient } from '@prisma/client';
-import { Address } from '../interfaces/address.interface'
+import { Address } from '../interfaces/address.interface';
+import prisma from '../lib/prisma';
 
 export default class UserAddressService {
-  public address = new PrismaClient().userAddress;
+  public address = prisma.userAddress;
 
   public async createAddress(userId: string, addressData: Address): Promise<void> {
     const { fullName, address, country, postalCode, city } = addressData;
