@@ -23,4 +23,26 @@ export default class CartController {
       next(error)
     }
   }
+
+  public getUserCart = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
+    const { id: userId } = req.user;
+    try {
+      const cart = await this.CartService.getUserCart(userId);
+      let total: number = 0;
+      for (const item of cart) {
+        total = total + Number(item.product.price)
+      }
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: {
+            total,
+            cart
+          }
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
