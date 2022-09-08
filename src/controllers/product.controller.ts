@@ -1,4 +1,4 @@
-import { Response, NextFunction } from 'express';
+import { Response, NextFunction, Request } from 'express';
 import ProductService from '../services/product.services';
 import { ProductImage } from '../interfaces/product.interface';
 import { FormRequest } from '../interfaces/request.interface';
@@ -9,6 +9,21 @@ export default class ProductController {
 
   private ProductService = new ProductService();
   private Cloudinary = new Cloudinary();
+
+  public getProductCategories = async (req: Request, res: Response, next: NextFunction) => {
+    const { name } = req.query;
+    try {
+      const categories = await this.ProductService.getCategories(name);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: categories
+        })
+    } catch (error) {
+      next(error);
+    }
+  };
 
   public addProduct = async (req: FormRequest, res: Response, next: NextFunction): Promise<Response | void> => {
     const { name, description, price, quantity, productCategoryId } = req.body;
@@ -34,6 +49,37 @@ export default class ProductController {
       next(error)
     }
   }
+
+  public getProducts = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const products = await this.ProductService.getProducts();
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: products
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  public getProduct = async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
+    console.log(req.params)
+    try {
+      const product = await this.ProductService.getProductById(id);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: product
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
+
 
   public getCloudFolder = async (productCategoryId: string): Promise<string | undefined> => {
     const category = await this.ProductService.getCategoryNameById(productCategoryId);
