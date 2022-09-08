@@ -24,6 +24,15 @@ export default class ProductRoute implements Route {
         adminOnlyMiddleware,
         multerImageUpload.array('image'),
         this.ProductController.addProduct
-      );
+      )
+      .get(this.ProductController.getProducts);
+
+    this.router
+      .route(`${this.path}/categories`)
+      .get(this.ProductController.getProductCategories);
+
+    this.router
+      .route(`${this.path}/:id`)
+      .get(this.ProductController.getProduct)
   }
 }
