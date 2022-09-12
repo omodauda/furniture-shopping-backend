@@ -3,7 +3,7 @@ import Route from '../interfaces/routes.interface';
 import CartController from '../controllers/cart.controller';
 import { authMiddleware } from '../middlewares/auth.middleware';
 import validationMiddleware from '../middlewares/validation.middleware';
-import { addToCartValidation } from '../validations/cart.validation';
+import { addToCartValidation, updateCartItemValidation } from '../validations/cart.validation';
 
 export default class CartRoute implements Route {
   public path = '/cart';
@@ -22,6 +22,7 @@ export default class CartRoute implements Route {
 
     this.router
       .route(`${this.path}/:id`)
-      .delete(authMiddleware, this.CartController.removeFromCart)
+      .patch(authMiddleware, validationMiddleware(updateCartItemValidation), this.CartController.updateCartItem)
+      .delete(authMiddleware, this.CartController.removeFromCart);
   }
 }
