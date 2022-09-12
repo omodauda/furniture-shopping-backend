@@ -21,6 +21,19 @@ const addToCartValidation = Joi.object().keys({
       'string.max': 'product id should not be more than 36 characters length',
       'any.required': 'product id is required'
     }),
+});
+
+const updateCartItemValidation = Joi.object().keys({
+  quantity: Joi.number()
+    .required()
+    .integer()
+    .positive()
+    .messages({
+      'number.base': "quantity must be a number",
+      'any.required': 'quantity is required',
+      'number.positive': 'quantity should be a positive number',
+      'number.integer': 'quantity should be an integer'
+    }),
 })
 
-export { addToCartValidation }
+export { addToCartValidation, updateCartItemValidation }
