@@ -1,6 +1,7 @@
 export interface Order {
   total: number;
-  orders: OrderItem[]
+  orders: OrderItem[];
+  deliveryAddressId: string;
 }
 
 export interface OrderItem {
