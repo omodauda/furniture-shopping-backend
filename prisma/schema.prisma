@@ -39,6 +39,7 @@ model UserAddress {
   updatedAt  DateTime @updatedAt
   user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId     String   @unique
+  orders     Order[]
 
   @@map("user_address")
 }
@@ -79,12 +80,14 @@ model ProductImage {
 }
 
 model Order {
-  id         String         @id @default(uuid())
-  total      Decimal        @db.Decimal(10, 2)
-  status     ShippingStatus @default(Processing)
-  user       User           @relation(fields: [userId], references: [id])
-  userId     String
-  orderItems OrderItem[]
+  id                String         @id @default(uuid())
+  total             Decimal        @db.Decimal(10, 2)
+  status            ShippingStatus @default(Processing)
+  user              User           @relation(fields: [userId], references: [id])
+  userId            String
+  orderItems        OrderItem[]
+  deliveryAddress   UserAddress    @relation(fields: [deliveryAddressId], references: [id])
+  deliveryAddressId String
 
   @@map("orders")
 }
