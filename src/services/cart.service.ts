@@ -20,6 +20,8 @@ export default class CartService {
         userId,
       },
       select: {
+        id: true,
+        quantity: true,
         product: {
           select: {
             id: true,
