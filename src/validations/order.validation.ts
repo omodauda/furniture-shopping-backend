@@ -38,7 +38,17 @@ const orderValidation = Joi.object().keys({
           'string.max': 'product id should not be more than 36 characters length',
           'any.required': 'product id is required'
         }),
-    }))
+    })),
+  deliveryAddressId: Joi.string()
+    .min(36)
+    .max(36)
+    .required()
+    .messages({
+      'string.empty': 'delivery address id cannot be an empty field',
+      'string.min': 'delivery address id should be minimum of 36 characters length',
+      'string.max': 'delivery address id should not be more than 36 characters length',
+      'any.required': 'delivery address id is required'
+    }),
 })
 
 export { orderValidation }
