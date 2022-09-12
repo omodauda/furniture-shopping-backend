@@ -19,5 +19,9 @@ export default class CartRoute implements Route {
       .route(`${this.path}`)
       .get(authMiddleware, this.CartController.getUserCart)
       .post(authMiddleware, validationMiddleware(addToCartValidation), this.CartController.addToCart);
+
+    this.router
+      .route(`${this.path}/:id`)
+      .delete(authMiddleware, this.CartController.removeFromCart)
   }
 }
