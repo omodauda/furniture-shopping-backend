@@ -61,4 +61,15 @@ export default class CartService {
       }
     })
   }
+
+  public updateCartItem = async (id: string, quantity: number): Promise<CartItem> => {
+    return await this.cartItem.update({
+      where: {
+        id,
+      },
+      data: {
+        quantity
+      }
+    })
+  }
 }
