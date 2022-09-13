@@ -22,7 +22,12 @@ export default class UserAddressService {
     return await this.address.findMany({
       where: {
         userId
-      }
+      },
+      orderBy: [
+        {
+          createdAt: 'desc'
+        }
+      ]
     });
   }
 
