@@ -32,6 +32,7 @@ export default class UserRoute implements Route {
 
     this.router
       .route(`${this.path}/address`)
+      .get(authMiddleware, this.AddressController.getUserAddress)
       .post(authMiddleware, validationMiddleware(createAddressValidation), this.AddressController.addAddress)
   }
 }
