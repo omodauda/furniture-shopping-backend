@@ -22,4 +22,19 @@ export default class AddressController {
       next(error)
     }
   }
+
+  public getUserAddress = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
+    const { id: userId } = req.user;
+    try {
+      const address = await this.UserAddressService.getUserAddress(userId);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: address
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
