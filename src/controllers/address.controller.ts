@@ -37,4 +37,20 @@ export default class AddressController {
       next(error)
     }
   }
+
+  public setDefaultAddress = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
+    const { id: userId } = req.user;
+    const { id: addressId } = req.params;
+    try {
+      await this.UserAddressService.setDefaultAddress(userId, addressId);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          message: 'default address set successfully'
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
 }
