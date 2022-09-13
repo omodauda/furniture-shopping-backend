@@ -17,4 +17,13 @@ export default class UserAddressService {
       }
     });
   }
+
+  public async getUserAddress(userId: string): Promise<Address[]> {
+    return await this.address.findMany({
+      where: {
+        userId
+      }
+    });
+
+  }
 }
