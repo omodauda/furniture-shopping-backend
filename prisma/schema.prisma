@@ -95,7 +95,7 @@ model Order {
 enum ShippingStatus {
   Processing
   Cancelled
-  Completed
+  Delivered
 }
 
 model OrderItem {
