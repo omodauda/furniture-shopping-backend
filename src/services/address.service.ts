@@ -24,6 +24,32 @@ export default class UserAddressService {
         userId
       }
     });
+  }
 
+  public async setDefaultAddress(userId: string, addressId: string): Promise<Address> {
+    const previousDefault = await this.address.findFirst({
+      where: {
+        userId,
+        isDefault: true
+      }
+    });
+    if (previousDefault) {
+      await this.address.update({
+        where: {
+          id: previousDefault.id
+        },
+        data: {
+          isDefault: false
+        }
+      })
+    }
+    return await this.address.update({
+      where: {
+        id: addressId,
+      },
+      data: {
+        isDefault: true
+      }
+    });
   }
 }
