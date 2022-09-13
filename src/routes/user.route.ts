@@ -28,11 +28,15 @@ export default class UserRoute implements Route {
 
     this.router
       .route(`${this.path}/profile`)
-      .get(authMiddleware, this.UserController.profile)
+      .get(authMiddleware, this.UserController.profile);
 
     this.router
       .route(`${this.path}/address`)
       .get(authMiddleware, this.AddressController.getUserAddress)
-      .post(authMiddleware, validationMiddleware(createAddressValidation), this.AddressController.addAddress)
+      .post(authMiddleware, validationMiddleware(createAddressValidation), this.AddressController.addAddress);
+
+    this.router
+      .route(`${this.path}/address/default/:id`)
+      .patch(authMiddleware, this.AddressController.setDefaultAddress)
   }
 }
