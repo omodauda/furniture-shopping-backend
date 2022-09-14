@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/src/index.js",
     "dev": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "npx prisma migrate deploy"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
