@@ -1,4 +1,4 @@
-import { Response, NextFunction } from 'express';
+import { Response, NextFunction, query } from 'express';
 import OrderService from '../services/order.service';
 import { AuthRequest } from '../interfaces/auth.interface';
 import { Order } from '../interfaces/order.interface';
@@ -11,7 +11,8 @@ export default class OrderController {
     const orderData: Order = req.body;
     const { id: userId } = req.user;
     try {
-      await this.OrderService.createOrder(userId, orderData);
+      const orderNo = await this.generateOrderNo();
+      await this.OrderService.createOrder(userId, orderData, orderNo);
       return res
         .status(201)
         .json({
@@ -21,5 +22,27 @@ export default class OrderController {
     } catch (error) {
       next(error)
     }
+  }
+
+  public getUserOrders = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
+    const { id: userId } = req.user;
+    const { status } = req.query;
+    try {
+      const orders = await this.OrderService.getUserOrders(userId, status as string);
+      return res
+        .status(200)
+        .json({
+          status: 'success',
+          data: orders
+        })
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  public generateOrderNo = async (): Promise<number> => {
+    const min = 100000000;
+    const max = 999999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 }
