@@ -41,16 +41,8 @@ export default class UserService {
         fullName: true,
         email: true,
         photo: true,
-        addresses: {
-          select: {
-            id: true,
-            fullName: true,
-            address: true,
-            postalCode: true,
-            country: true,
-            city: true
-          }
-        }
+        addresses: true,
+        orders: true
       }
     });
     return profile!;
