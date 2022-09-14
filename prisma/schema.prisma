@@ -81,7 +81,7 @@ model ProductImage {
 
 model Order {
   id                String         @id @default(uuid())
-  orderNo           String
+  orderNo           Int
   total             Decimal        @db.Decimal(10, 2)
   status            ShippingStatus @default(Processing)
   user              User           @relation(fields: [userId], references: [id])
