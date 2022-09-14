@@ -44,12 +44,19 @@ export default class UserController {
   public profile = async (req: AuthRequest, res: Response, next: NextFunction): Promise<Response | void> => {
     const { id: userId } = req.user;
     try {
-      const user = await this.UserService.getProfile(userId);
+      const { fullName, email, photo, addresses, orders } = await this.UserService.getProfile(userId);
+      const data = {
+        fullName,
+        email,
+        photo,
+        addresses: addresses.length,
+        orders: orders.length
+      }
       return res
         .status(200)
         .json({
           status: 'success',
-          data: user
+          data
         })
     } catch (error) {
       next(error)
