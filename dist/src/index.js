@@ -9,8 +9,10 @@ const user_route_1 = __importDefault(require("./routes/user.route"));
 const product_route_1 = __importDefault(require("./routes/product.route"));
 const order_route_1 = __importDefault(require("./routes/order.route"));
 const cart_route_1 = __importDefault(require("./routes/cart.route"));
+const health_route_1 = __importDefault(require("./routes/health.route"));
 dotenv_1.default.config();
 const app = new app_1.default([
+    new health_route_1.default(),
     new user_route_1.default(),
     new product_route_1.default(),
     new order_route_1.default(),
