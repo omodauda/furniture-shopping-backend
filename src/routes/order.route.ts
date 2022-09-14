@@ -17,6 +17,7 @@ export default class OrderRoute implements Route {
   private initializeRoutes() {
     this.router
       .route(`${this.path}`)
+      .get(authMiddleware, this.OrderController.getUserOrders)
       .post(authMiddleware, validationMiddleware(orderValidation), this.OrderController.createOrder)
   }
 }
